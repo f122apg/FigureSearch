@@ -5,15 +5,15 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 
-namespace FigureSearch
+namespace FigureSearch.Selenium
 {
-	class SeleniumOperation
-	{
-		public static IWebDriver CreateInstance(SeleniumBrowers.Name browserName, bool headless = false)
-		{
-			switch (browserName)
-			{
-				case SeleniumBrowers.Name.Chrome:
+    class SeleniumOperation
+    {
+        public static IWebDriver CreateInstance(SeleniumBrowers.Name browserName, bool headless = false)
+        {
+            switch (browserName)
+            {
+                case SeleniumBrowers.Name.Chrome:
 
                     // ヘッドレス(ブラウザの非表示)モードで起動するかどうか
                     if (headless)
@@ -26,20 +26,20 @@ namespace FigureSearch
                         return new ChromeDriver();
 
                 case SeleniumBrowers.Name.Firefox:
-					FirefoxDriverService driverService = FirefoxDriverService.CreateDefaultService();
-					driverService.FirefoxBinaryPath = @"D:\Softs\Mozilla Firefox\firefox.exe";
-					driverService.HideCommandPromptWindow = true;
-					driverService.SuppressInitialDiagnosticInformation = true;
-					return new FirefoxDriver(driverService);
+                    FirefoxDriverService driverService = FirefoxDriverService.CreateDefaultService();
+                    driverService.FirefoxBinaryPath = @"D:\Softs\Mozilla Firefox\firefox.exe";
+                    driverService.HideCommandPromptWindow = true;
+                    driverService.SuppressInitialDiagnosticInformation = true;
+                    return new FirefoxDriver(driverService);
 
-				case SeleniumBrowers.Name.InternetExplorer:
-					return new InternetExplorerDriver();
+                case SeleniumBrowers.Name.InternetExplorer:
+                    return new InternetExplorerDriver();
 
-				default:
-					throw new ArgumentException(string.Format("Please Definition BrowserName:{0}", browserName));
-			}
-		}
+                default:
+                    throw new ArgumentException(string.Format("Please Definition BrowserName:{0}", browserName));
+            }
+        }
 
 
-	}
+    }
 }

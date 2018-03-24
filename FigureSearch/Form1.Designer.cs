@@ -40,13 +40,14 @@
             this.ProductName_ColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ReleaseDate_ColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Price_ColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ProductURL_ColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Favicons_ImageList = new System.Windows.Forms.ImageList(this.components);
             this.Amazon_CheckBox = new System.Windows.Forms.CheckBox();
             this.Suruga_ya_CheckBox = new System.Windows.Forms.CheckBox();
             this.Amiami_CheckBox = new System.Windows.Forms.CheckBox();
             this.Notification_Button = new System.Windows.Forms.Button();
-            this.HeadLess_CheckBox = new System.Windows.Forms.CheckBox();
-            this.ProductURL_ColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.HeadlessMode_CheckBox = new System.Windows.Forms.CheckBox();
+            this.SimilarMode_CheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -98,7 +99,7 @@
             this.Product_ListView.Location = new System.Drawing.Point(13, 88);
             this.Product_ListView.MultiSelect = false;
             this.Product_ListView.Name = "Product_ListView";
-            this.Product_ListView.Size = new System.Drawing.Size(1339, 543);
+            this.Product_ListView.Size = new System.Drawing.Size(1534, 543);
             this.Product_ListView.SmallImageList = this.Favicons_ImageList;
             this.Product_ListView.TabIndex = 3;
             this.Product_ListView.UseCompatibleStateImageBehavior = false;
@@ -139,6 +140,10 @@
             this.Price_ColumnHeader.Tag = "";
             this.Price_ColumnHeader.Text = "価格";
             this.Price_ColumnHeader.Width = 89;
+            // 
+            // ProductURL_ColumnHeader
+            // 
+            this.ProductURL_ColumnHeader.Text = "商品URL";
             // 
             // Favicons_ImageList
             // 
@@ -208,38 +213,51 @@
             this.Notification_Button.ForeColor = System.Drawing.Color.Red;
             this.Notification_Button.Location = new System.Drawing.Point(13, 119);
             this.Notification_Button.Name = "Notification_Button";
-            this.Notification_Button.Size = new System.Drawing.Size(1339, 520);
+            this.Notification_Button.Size = new System.Drawing.Size(1534, 520);
             this.Notification_Button.TabIndex = 7;
-            this.Notification_Button.Text = "商品情報取得中";
+            this.Notification_Button.Text = "商品情報\r\n取得中";
             this.Notification_Button.UseVisualStyleBackColor = true;
             this.Notification_Button.Visible = false;
             // 
-            // HeadLess_CheckBox
+            // HeadlessMode_CheckBox
             // 
-            this.HeadLess_CheckBox.AutoSize = true;
-            this.HeadLess_CheckBox.Checked = true;
-            this.HeadLess_CheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.HeadLess_CheckBox.Font = new System.Drawing.Font("MS UI Gothic", 13F);
-            this.HeadLess_CheckBox.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.HeadLess_CheckBox.ImageKey = "(なし)";
-            this.HeadLess_CheckBox.Location = new System.Drawing.Point(998, 17);
-            this.HeadLess_CheckBox.Name = "HeadLess_CheckBox";
-            this.HeadLess_CheckBox.Size = new System.Drawing.Size(328, 26);
-            this.HeadLess_CheckBox.TabIndex = 8;
-            this.HeadLess_CheckBox.Text = "ヘッドレス(ブラウザの非表示)モード";
-            this.HeadLess_CheckBox.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.HeadLess_CheckBox.UseVisualStyleBackColor = true;
+            this.HeadlessMode_CheckBox.AutoSize = true;
+            this.HeadlessMode_CheckBox.Checked = true;
+            this.HeadlessMode_CheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.HeadlessMode_CheckBox.Font = new System.Drawing.Font("MS UI Gothic", 13F);
+            this.HeadlessMode_CheckBox.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.HeadlessMode_CheckBox.ImageKey = "(なし)";
+            this.HeadlessMode_CheckBox.Location = new System.Drawing.Point(998, 17);
+            this.HeadlessMode_CheckBox.Name = "HeadlessMode_CheckBox";
+            this.HeadlessMode_CheckBox.Size = new System.Drawing.Size(328, 26);
+            this.HeadlessMode_CheckBox.TabIndex = 8;
+            this.HeadlessMode_CheckBox.Text = "ヘッドレスモード(ブラウザの非表示)";
+            this.HeadlessMode_CheckBox.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.HeadlessMode_CheckBox.UseVisualStyleBackColor = true;
             // 
-            // ProductURL_ColumnHeader
+            // SimilarMode_CheckBox
             // 
-            this.ProductURL_ColumnHeader.Text = "商品URL";
+            this.SimilarMode_CheckBox.AutoSize = true;
+            this.SimilarMode_CheckBox.Checked = true;
+            this.SimilarMode_CheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.SimilarMode_CheckBox.Font = new System.Drawing.Font("MS UI Gothic", 13F);
+            this.SimilarMode_CheckBox.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SimilarMode_CheckBox.ImageKey = "(なし)";
+            this.SimilarMode_CheckBox.Location = new System.Drawing.Point(998, 53);
+            this.SimilarMode_CheckBox.Name = "SimilarMode_CheckBox";
+            this.SimilarMode_CheckBox.Size = new System.Drawing.Size(507, 26);
+            this.SimilarMode_CheckBox.TabIndex = 9;
+            this.SimilarMode_CheckBox.Text = "近似モード(検索文字に一番近似している商品を取得)";
+            this.SimilarMode_CheckBox.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SimilarMode_CheckBox.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1368, 651);
-            this.Controls.Add(this.HeadLess_CheckBox);
+            this.ClientSize = new System.Drawing.Size(1563, 651);
+            this.Controls.Add(this.SimilarMode_CheckBox);
+            this.Controls.Add(this.HeadlessMode_CheckBox);
             this.Controls.Add(this.Notification_Button);
             this.Controls.Add(this.Amiami_CheckBox);
             this.Controls.Add(this.Suruga_ya_CheckBox);
@@ -272,8 +290,9 @@
 		private System.Windows.Forms.ColumnHeader Price_ColumnHeader;
 		private System.Windows.Forms.ImageList Favicons_ImageList;
         private System.Windows.Forms.Button Notification_Button;
-        private System.Windows.Forms.CheckBox HeadLess_CheckBox;
+        private System.Windows.Forms.CheckBox HeadlessMode_CheckBox;
         private System.Windows.Forms.ColumnHeader ProductURL_ColumnHeader;
+        private System.Windows.Forms.CheckBox SimilarMode_CheckBox;
     }
 }
 

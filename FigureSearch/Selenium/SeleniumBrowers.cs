@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FigureSearch
+﻿namespace FigureSearch.Selenium
 {
-	public class SeleniumBrowers
-	{
-		public enum Name
-		{
-			Chrome,
-			Firefox,
-			InternetExplorer
-		}
-	}
+    public class SeleniumBrowers
+    {
+        public enum Name
+        {
+            Chrome,
+            Firefox,
+            InternetExplorer
+        }
+    }
 }
